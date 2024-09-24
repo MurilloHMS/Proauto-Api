@@ -2,7 +2,7 @@
 {
     public class Vehicles
     {        
-        public string Id { get; set; } // Identificador único do veículo
+        public int Id { get; set; } // Identificador único do veículo
         public string Name { get; set; } // Nome do veículo
         public string Brand { get; set; } // Marca do veículo
         public string Model { get; set; } // Modelo do veículo

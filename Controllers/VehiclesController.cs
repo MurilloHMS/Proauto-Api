@@ -30,7 +30,7 @@ namespace Proauto_Api.Controllers
 
         // GET: api/Vehicles/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Vehicles>> GetVehicles(string id)
+        public async Task<ActionResult<Vehicles>> GetVehicles(int id)
         {
             var vehicles = await _context.Vehicles.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace Proauto_Api.Controllers
         // PUT: api/Vehicles/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutVehicles(string id, Vehicles vehicles)
+        public async Task<IActionResult> PutVehicles(int id, Vehicles vehicles)
         {
             if (id != vehicles.Id)
             {
@@ -100,7 +100,7 @@ namespace Proauto_Api.Controllers
 
         // DELETE: api/Vehicles/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteVehicles(string id)
+        public async Task<IActionResult> DeleteVehicles(int id)
         {
             var vehicles = await _context.Vehicles.FindAsync(id);
             if (vehicles == null)
@@ -114,7 +114,7 @@ namespace Proauto_Api.Controllers
             return NoContent();
         }
 
-        private bool VehiclesExists(string id)
+        private bool VehiclesExists(int id)
         {
             return _context.Vehicles.Any(e => e.Id == id);
         }
